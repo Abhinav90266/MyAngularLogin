@@ -1,0 +1,56 @@
+.main{
+    background-color:cadetblue;
+}
+.container{
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+}
+h1{
+    margin-top: 10px;
+    font-size: 50px;
+    font-weight: 700;
+    color: black;
+}
+head{
+    font-weight: 600;
+}
+.main button{
+    margin: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 30px;
+    font-weight: 800;
+    background-color: rgb(245, 62, 7);
+    border: 1px solid black;
+    color: black;
+    border-radius: 5px;
+}
+.table table tr th{
+    padding-right: 150px;
+} 
+.table{
+    margin-top: 20px;
+    font-size: 30px;
+    /* display: flex; */
+}
+.table button{
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+.table .edit-btn{
+    background-color: green;
+    color: white;
+    padding: 2px 3px 2px 3px;
+    border-radius: 10px;
+    border: none;
+    /* margin-left: 5px;
+    margin-right: 5px; */
+}
+.Delete-btn{
+    background-color: red;
+    color: white;
+    padding: 2px 3px 2px 3px;
+    border-radius: 10px;
+    border: none;
+}

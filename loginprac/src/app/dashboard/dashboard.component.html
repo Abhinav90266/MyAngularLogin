@@ -1,0 +1,31 @@
+<div class="main">
+    <div class="container">
+        <h1 class="head">Employee Details</h1>
+        <a routerLink="/add"><button type="submit">Add</button></a>
+    </div>
+</div>
+
+
+  <form >
+    <div class="table">
+    <table ngSkipHydration>
+      <tr class="table-list">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Mobile No.</th>
+      <th>Salary</th>
+      </tr>
+      <tr *ngFor="let employee of employees,let i=index" >
+          <td>{{employee.id}}</td>
+          <td>{{employee.name}}</td>
+          <td>{{employee.mobile}}</td>
+          <td>{{employee.salary}}</td>
+          <a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(employee,i)">Update</button></a>
+          <button class="Delete-btn" type="submit" (click)="onDelete(employee, i)">Delete</button>
+
+          <!-- <button class="Delete-btn" type="submit" (click)="onDelete(employee,i)">Delete</button> -->
+      </tr>
+    </table>
+  </div>
+  </form>
+

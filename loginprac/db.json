@@ -1,0 +1,36 @@
+{
+  "signup": [
+    {
+      "id": "4b14",
+      "name": "ab",
+      "email": "ab@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "aefb",
+      "name": "kashish",
+      "email": "k@yopmail.com",
+      "password": "123456"
+    }
+  ],
+  "EmployeeDetails": [
+    {
+      "id": 103,
+      "name": "Aditya",
+      "mobile": 8782882921,
+      "salary": 232211
+    },
+    {
+      "id": 102,
+      "name": "ahsi",
+      "mobile": 72882,
+      "salary": 72892
+    },
+    {
+      "id": 1027,
+      "name": "ahsjks",
+      "mobile": 72883,
+      "salary": 7728822
+    }
+  ]
+}

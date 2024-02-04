@@ -1,0 +1,32 @@
+<div>
+  <h1>Employee Details</h1>
+</div>
+
+<div>
+  <form [formGroup]="employeeForm" > <!-- (ngSubmit)="Addform()" -->
+    <div class="list">
+        <div class="mb-10">
+            <label  class="form-label">Id</label>
+            <input formControlName="id" type="number" name="id" class="form-control"  placeholder="Your Id">
+          </div>
+        <div class="mb-3">
+          <label  class="form-label">Name</label>
+          <input formControlName="name" type="text" name="name" class="form-control"  placeholder="Name">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Mobile No.</label>
+          <input formControlName="mobile" type="number" name="mobile" class="form-control"  placeholder="Mobile Number">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Salary</label>
+            <input formControlName="salary" type="number" name="salary" class="form-control"  placeholder="Salary">
+          </div>
+    </div>
+    <div class="footer">
+        <a routerLink="/dashboard"><button type="submit" class="btn btn-secondary" >Close</button></a>
+        <!-- <button type="button" class="btn btn-primary" (click)="addForm()" *ngIf="!tempdata">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="updateform()" *ngIf="tempdata">Update Changes</button> -->
+        <a routerLink="/dashboard"><button type="button" class="btn btn-primary" (click)="checkFormStatus()">{{tempdata ? 'Update': 'Save' }} changes</button></a>
+      </div>
+</form>
+</div>
