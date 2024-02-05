@@ -9,9 +9,11 @@ import { json } from 'stream/consumers';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrl: './dashboard.component.css',
+  host:{ngSkipHydration: 'true'}
 })
 export class DashboardComponent implements OnInit {
+
   employeeForm!:FormGroup
 employees: any[]=[];
   update: any;
@@ -25,7 +27,7 @@ employees: any[]=[];
   
   ngOnInit(): void {
     this.getList();
-    this.ondestroy()
+    // this.ondestroy()
     // this.updateform
   }
 
@@ -42,12 +44,12 @@ employees: any[]=[];
     localStorage.setItem('value',JSON.stringify(employee,i))
     console.log(employee,i);
 }
-ondestroy(){
-  localStorage.removeItem('value')
-}
+// ondestroy(){
+//   localStorage.removeItem('value')
+// }
 onDelete(employee: any, index: number): void {
   const employeeId = employee.id;
-  if(confirm("Are You You want to delete"))
+  if(confirm("Are You sure You want to delete"))
   this._http.delete(`http://localhost:3000/EmployeeDetails/${employeeId}`).subscribe(
     () => {
       this.employees.splice(index, 1); 
