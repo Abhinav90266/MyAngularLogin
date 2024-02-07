@@ -2,7 +2,7 @@ import { Component, OnInit,input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { parse } from 'path';
+import { EmployeeServicesService } from '../employee-services.service';
 
 @Component({
   selector: 'app-add',
@@ -11,14 +11,17 @@ import { parse } from 'path';
 })
 export class AddComponent implements OnInit {
   employeeForm!:FormGroup
-  // employee:any=[];
   tempdata: any ;
   
-  constructor(private formBuilder:FormBuilder,private _http:HttpClient,private router:Router){}
+  constructor(private formBuilder:FormBuilder,private _http:HttpClient,private router:Router,private _employeeService:EmployeeServicesService){}
   
   ngOnInit(): void {
-    this.employeeAddForm();
-    // this.updatedata();
+    this.employeeForm=this.formBuilder.group({
+      id:[''],
+      name:[''],
+      mobile:[''],
+      salary:[''],
+    })
     this.getList();
   }
   getList(){
@@ -31,17 +34,15 @@ export class AddComponent implements OnInit {
          salary: this.tempdata.salary
        });
   }
-  employeeAddForm(){
-    this.employeeForm=this.formBuilder.group({
-      id:[''],
-      name:[''],
-      mobile:[''],
-      salary:[''],
-    })
-  }
   
   addForm(){
-    this._http.post<any>("http://localhost:3000/EmployeeDetails",this.employeeForm.value).subscribe(res=>{
+    let payload = {
+      id: (this.employeeForm.value?.id)?.toString(),
+      name:  this.employeeForm.value?.name,
+      mobile:  this.employeeForm.value?.mobile,
+      salary:  this.employeeForm.value?.salary,
+    }
+    this._employeeService.addForm(payload).subscribe(res=>{
       alert("registration succesfull");
       this.employeeForm.reset();
       this.getList();

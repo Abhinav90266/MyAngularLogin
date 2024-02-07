@@ -20,7 +20,7 @@ head{
     padding-left: 15px;
     padding-right: 15px;
     font-size: 30px;
-    font-weight: 800;
+    font-weight: 600;
     background-color: rgb(245, 62, 7);
     border: 1px solid black;
     color: black;
@@ -52,5 +52,12 @@ head{
     color: white;
     padding: 2px 3px 2px 3px;
     border-radius: 10px;
+    border: none;
+}
+.modal-footer button{
+    background-color: cadetblue;
+    color: black;
+    font-size: 20PX;
+    font-weight: 400;
     border: none;
 }

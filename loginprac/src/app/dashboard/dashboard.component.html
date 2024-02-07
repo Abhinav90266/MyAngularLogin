@@ -1,29 +1,70 @@
 <div class="main">
-    <div class="container">
-        <h1 class="head">Employee Details</h1>
-        <a routerLink="/add"><button type="submit">Add</button></a>
+  <div class="container">
+    <h1 class="head">Employee Details</h1>
+    <div>
+      <a routerLink="/add"><button type="submit">Add</button></a>
+    <a><button type="submit" data-bs-toggle="modal" data-bs-target="#exampleModallogout">LogOut</button></a>
+
+<!--Logout Modal -->
+<div class="modal fade" id="exampleModallogout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Login Out</h1>
+      </div>
+      <div class="modal-body">
+        Are you sure want to LogOut?
+      </div>
+      <div class="modal-footer">
+        <button type="button"  data-bs-dismiss="modal">Cancel</button>
+        <button routerLink="/login" type="button"  data-bs-dismiss="modal">LogOut</button>
+      </div>
     </div>
+  </div>
+</div>
+    </div>
+  </div>
 </div>
 
 
-  <form >
-    <div class="table">
-    <table ngSkipHydration>
-      <tr class="table-list">
-      <th>Id</th>
-      <th>Name</th>
-      <th>Mobile No.</th>
-      <th>Salary</th>
-      </tr>
-      <tr *ngFor="let employee of employees,let i=index" >
-          <td>{{employee.id}}</td>
-          <td>{{employee.name}}</td>
-          <td>{{employee.mobile}}</td>
-          <td>{{employee.salary}}</td>
-          <a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(employee,i)">Update</button></a>
-          <button class="Delete-btn" type="submit" (click)="onDelete(employee, i)">Delete</button>
-      </tr>
-    </table>
-  </div>
-  </form>
 
+  <div class="table">
+    <table ngSkipHydration>
+      <thead>
+        <tr class="table-list">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Mobile No.</th>
+        <th>Salary</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let emp of employees;let i=index">
+        <th>{{emp.id}}</th>
+        <td>{{emp.name}}</td>
+        <td>{{emp.mobile}}</td>
+        <td>{{emp.salary}}</td>
+        <a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(employee,i)">Update</button></a>
+        <button class="Delete-btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onModalDelete(emp.id)">Delete</button>
+      </tr>
+    </table>  
+
+<!--Delete Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Employee Detail</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure want to Delete data?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onDelete()" >Delete List</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  

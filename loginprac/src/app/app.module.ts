@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AddComponent } from './add/add.component';
+import { EmployeeServicesService } from './employee-services.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { AddComponent } from './add/add.component';
     HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),EmployeeServicesService
   ],
   bootstrap: [AppComponent]
 })

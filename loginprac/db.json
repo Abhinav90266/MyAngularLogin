@@ -11,32 +11,24 @@
       "name": "kashish",
       "email": "k@yopmail.com",
       "password": "123456"
-    }
-  ],
-  "EmployeeDetails": [
-    {
-      "id": "103",
-      "name": "Aditya",
-      "mobile": 8782882921,
-      "salary": 232211
     },
     {
-      "id": "1027",
-      "name": "ahsjks",
-      "mobile": 72883,
-      "salary": 7728822
+      "id": "2b8e",
+      "name": "Abhinav",
+      "email": "abhi@gmail.com",
+      "password": "123"
     },
     {
-      "id": 101,
-      "name": "Abhi",
-      "mobile": 827829271,
-      "salary": 1200000
+      "id": "7d03",
+      "name": "abhi2",
+      "email": "abhi2@gmail.com",
+      "password": "123"
     },
     {
-      "id": 106,
-      "name": "Abhinav Singh",
-      "mobile": 9026604297,
-      "salary": 10200011
+      "id": "2d4d",
+      "name": "kashish",
+      "email": "kk@yopmail.com",
+      "password": "1111"
     }
   ]
 }
