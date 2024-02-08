@@ -1,18 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AddComponent } from './add/add.component';
-// import { AddButtonComponent } from './add-button/add-button.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
-  {path:'login',component:LoginComponent},
-  {path:"signup",component:SignupComponent},
-  {path:"dashboard",component:DashboardComponent},
-  {path:"add",component:AddComponent}
-  // {path:"add-button",component:AddButtonComponent}
+  {path:'login',loadChildren:()=>import('./login/login.module').then(m=>m.LoginModule)},
+  {path:"signup",loadChildren:()=>import('./signup/signup.module').then(m=>m.SignupModule)},
+  {path:"dashboard",loadChildren:()=>import('./dashboard/dashboard.module').then(m=>m.DashboardModule)},
+  {path:"add",loadChildren:()=>import('./add/add.module').then(m=>m.AddModule)},
 ];
 
 @NgModule({

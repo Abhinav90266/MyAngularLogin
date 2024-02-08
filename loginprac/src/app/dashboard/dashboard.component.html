@@ -43,7 +43,7 @@
         <td>{{emp.name}}</td>
         <td>{{emp.mobile}}</td>
         <td>{{emp.salary}}</td>
-        <a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(employee,i)">Update</button></a>
+        <a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(emp,i)" >Update</button></a>
         <button class="Delete-btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onModalDelete(emp.id)">Delete</button>
       </tr>
     </table>  
@@ -54,7 +54,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Employee Detail</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        
       </div>
       <div class="modal-body">
         Are you sure want to Delete data?

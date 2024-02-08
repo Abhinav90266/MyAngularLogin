@@ -2,21 +2,15 @@
   "EmpDetails": [
     {
       "id": "1",
-      "name": "kashish",
-      "mobile": 72212121212,
-      "salary": 727723
+      "name": "Ab",
+      "mobile": 8298819912,
+      "salary": 1000
     },
     {
       "id": "2",
-      "name": "Ab",
-      "mobile": 8298819912,
-      "salary": 2000
-    },
-    {
-      "id": "3",
-      "name": "Ab",
-      "mobile": 8298819912,
-      "salary": 2000
+      "name": "Abhi2",
+      "mobile": 1232132132,
+      "salary": 10000
     }
   ]
 }

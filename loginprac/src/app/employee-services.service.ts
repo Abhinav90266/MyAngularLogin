@@ -11,17 +11,17 @@ export class EmployeeServicesService implements OnInit {
   constructor(private http:HttpClient){}
   ngOnInit(): void {    
   }
-  addForm(employeeData:any){
-    return this.http.post(this.employeeUrl,employeeData)
-  }
-  getEmployeeList(){
-    return this.http.get(this.employeeUrl)
-  }
   signupApi(signupdata:any){
     return this.http.post(this.signupurl,signupdata)
   }
   loginApi(logindata:any){
     return this.http.get(this.signupurl)
+  }
+  addForm(employeeData:any){
+    return this.http.post(this.employeeUrl,employeeData)
+  }
+  getEmployeeList(){
+    return this.http.get(this.employeeUrl)
   }
   onDelete(id:any){
     return this.http.delete(`${this.employeeUrl}/${id}`)

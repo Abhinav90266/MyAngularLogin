@@ -29,6 +29,12 @@
       "name": "kashish",
       "email": "kk@yopmail.com",
       "password": "1111"
+    },
+    {
+      "id": "c6e7",
+      "name": "Abhi",
+      "email": "abhi@gmail.com",
+      "password": "111"
     }
   ]
 }

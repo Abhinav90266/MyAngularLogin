@@ -7,24 +7,24 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AddComponent } from './add/add.component';
 import { EmployeeServicesService } from './employee-services.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
     LoginComponent,
-    DashboardComponent,
+    SignupComponent,
     AddComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     provideClientHydration(),EmployeeServicesService
