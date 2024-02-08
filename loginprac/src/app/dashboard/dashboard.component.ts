@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getList();
+    this.ondestroy();
   }
 
   getList() {
@@ -48,7 +49,7 @@ export class DashboardComponent implements OnInit {
   }
   ondestroy(){
     localStorage.removeItem('value')
-  }
+    }
 }
 
 

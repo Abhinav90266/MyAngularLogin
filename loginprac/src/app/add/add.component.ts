@@ -54,6 +54,7 @@ export class AddComponent implements OnInit {
     checkFormStatus() {
       this.tempdata ? this.updateform() : this.addForm();
     }
+
     updateform(){
      
     }
