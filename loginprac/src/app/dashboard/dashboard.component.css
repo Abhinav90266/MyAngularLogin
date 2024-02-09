@@ -28,27 +28,25 @@ head{
 }
 .table table tr th{
     padding-right: 150px;
-} 
-.table{
+    align-items: center;
+}   
+/* .table{
     margin-top: 20px;
     font-size: 30px;
-    /* display: flex; */
-}
+} */
 .table button{
-    margin-left: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
     margin-bottom: 10px;
 }
-.table .edit-btn{
-    background-color: green;
-    color: white;
-    padding: 2px 3px 2px 3px;
+.edit-btn{
+    background-color:rgb(0, 87, 128);
+    color:antiquewhite;
     border-radius: 10px;
     border: none;
-    /* margin-left: 5px;
-    margin-right: 5px; */
 }
 .Delete-btn{
-    background-color: red;
+    background-color:grey;
     color: white;
     padding: 2px 3px 2px 3px;
     border-radius: 10px;
@@ -60,4 +58,14 @@ head{
     font-size: 20PX;
     font-weight: 400;
     border: none;
+}
+/* pagination */
+.paginate{
+    margin-top: 100px;
+    text-align: center;
+}
+/* //searching input */
+.search{
+    width: 900px;
+    margin-left: 20px;
 }

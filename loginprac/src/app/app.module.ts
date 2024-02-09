@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddComponent } from './add/add.component';
 import { EmployeeServicesService } from './employee-services.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { EmployeeServicesService } from './employee-services.service';
     LoginComponent,
     SignupComponent,
     AddComponent,
-    DashboardComponent
+    DashboardComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { EmployeeServicesService } from './employee-services.service';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [
     provideClientHydration(),EmployeeServicesService

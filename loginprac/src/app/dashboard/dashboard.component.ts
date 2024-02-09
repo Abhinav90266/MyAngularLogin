@@ -12,13 +12,19 @@ import { EmployeeServicesService } from '../employee-services.service';
 })
 export class DashboardComponent implements OnInit {
 
+  //pagination
+  currPage=1;
+  //searching
+  SearchText:any;
+
+  
   employeeForm!: FormGroup
   employees: any[] = [];
   update: any;
   i: any
   employee: any;
-  employeeId:any;
-  
+  employeeId: any;
+
   constructor(private formBuilder: FormBuilder, private _http: HttpClient, private router: Router, private _employeeService: EmployeeServicesService) {
   }
 
@@ -35,23 +41,27 @@ export class DashboardComponent implements OnInit {
     })
   }
   updateform(employee: any, i: any) {
-    localStorage.setItem('value', JSON.stringify(employee,i))
+    localStorage.setItem('value', JSON.stringify(employee, i))
   }
 
-  onDelete(){
-    this._employeeService.onDelete(this.employeeId).subscribe((res)=>{
+  onDelete() {
+    this._employeeService.onDelete(this.employeeId).subscribe((res) => {
       this.getList()
     })
   }
   //modal update
-  onModalDelete(idData:any){
-   this.employeeId=idData;
+  onModalDelete(idData: any) {
+    this.employeeId = idData;
   }
-  ondestroy(){
+  ondestroy() {
     localStorage.removeItem('value')
+  }
+  searchInput(){
+    if (this.SearchText) {
+      this.currPage=1;
     }
+  }
 }
-
 
 
 

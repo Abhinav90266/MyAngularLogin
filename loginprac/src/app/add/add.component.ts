@@ -12,7 +12,6 @@ import { EmployeeServicesService } from '../employee-services.service';
 export class AddComponent implements OnInit {
   employeeForm!:FormGroup
   tempdata: any ;
-  
   constructor(private formBuilder:FormBuilder,private _http:HttpClient,private router:Router,private _employeeService:EmployeeServicesService){}
   
   ngOnInit(): void {
@@ -26,7 +25,6 @@ export class AddComponent implements OnInit {
   }
   getList(){
     this.tempdata =  localStorage.getItem(('value')) ? JSON.parse(localStorage.getItem(('value')) ?? '') : '';
-    console.log("temp data : ", this.tempdata);
     this.employeeForm.patchValue({
          id: this.tempdata.id,
          name: this.tempdata.name,

@@ -27,26 +27,27 @@
 </div>
 
 
-
-  <div class="table">
+<input type="search" name="search" class="search form-control  mt-5 mb-5" placeholder="Search Name Or Mobile No." [(ngModel)]="SearchText" (keyup)="searchInput()">
+  <div class="table table-striped table-hover">
     <table ngSkipHydration>
       <thead>
         <tr class="table-list">
-        <th>Id</th>
-        <th>Name</th>
-        <th>Mobile No.</th>
-        <th>Salary</th>
+        <th class="coloum">Id</th>
+        <th class="coloum">Name</th>
+        <th class="coloum">Mobile No.</th>
+        <th class="coloum">Salary</th>
         </tr>
       </thead>
-      <tr *ngFor="let emp of employees;let i=index">
+      <tr *ngFor="let emp of employees | filter:SearchText | paginate: { itemsPerPage: 6, currentPage: currPage };let i=index">
         <th>{{emp.id}}</th>
         <td>{{emp.name}}</td>
         <td>{{emp.mobile}}</td>
         <td>{{emp.salary}}</td>
-        <a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(emp,i)" >Update</button></a>
-        <button class="Delete-btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onModalDelete(emp.id)">Delete</button>
+        <td><a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(emp,i)" >View</button></a>
+          <button class="Delete-btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onModalDelete(emp.id)">Delete</button></td>
       </tr>
     </table>  
+
 
 <!--Delete Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -67,4 +68,5 @@
   </div>
 </div>
 </div>
+<pagination-controls class="paginate" (pageChange)="currPage = $event"></pagination-controls>
   
