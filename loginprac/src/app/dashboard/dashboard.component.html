@@ -32,13 +32,13 @@
     <table ngSkipHydration>
       <thead>
         <tr class="table-list">
-        <th class="coloum">Id</th>
-        <th class="coloum">Name</th>
-        <th class="coloum">Mobile No.</th>
-        <th class="coloum">Salary</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Mobile No.</th>
+        <th (click)="sort('salary')">Salary<i class="fa fa-sort" style="font-size:20px; margin-left: 5px;"></i></th>
         </tr>
       </thead>
-      <tr *ngFor="let emp of employees | filter:SearchText | paginate: { itemsPerPage: 6, currentPage: currPage };let i=index">
+      <tr *ngFor="let emp of employees|filter:SearchText|sorting:key:reverse|paginate: { itemsPerPage: 6, currentPage: currPage };let i=index">
         <th>{{emp.id}}</th>
         <td>{{emp.name}}</td>
         <td>{{emp.mobile}}</td>

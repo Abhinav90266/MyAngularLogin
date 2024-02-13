@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { EmployeeServicesService } from '../employee-services.service';
+import { log } from 'console';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +17,9 @@ export class DashboardComponent implements OnInit {
   currPage=1;
   //searching
   SearchText:any;
-
+  //sorting
+  key:string='id'
+  reverse:boolean=false;
   
   employeeForm!: FormGroup
   employees: any[] = [];
@@ -58,7 +61,15 @@ export class DashboardComponent implements OnInit {
   }
   searchInput(){
     if (this.SearchText) {
-      this.currPage=1;
+      this.currPage=1; 
+    }
+  }
+  sort(salary:any){
+    if(this.key===salary){
+      this.reverse=!this.reverse
+    }else{
+      this.key=salary;
+      console.log(this.key);      
     }
   }
 }

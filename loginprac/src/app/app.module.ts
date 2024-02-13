@@ -12,6 +12,7 @@ import { AddComponent } from './add/add.component';
 import { EmployeeServicesService } from './employee-services.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipe } from './filter.pipe';
+import { SortingPipe } from './sorting.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FilterPipe } from './filter.pipe';
     SignupComponent,
     AddComponent,
     DashboardComponent,
-    FilterPipe
+    FilterPipe,
+    SortingPipe,
   ],
   imports: [
     BrowserModule,

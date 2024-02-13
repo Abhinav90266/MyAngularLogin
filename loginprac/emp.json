@@ -1,52 +1,58 @@
 {
   "EmpDetails": [
     {
-      "id": "1",
-      "name": "Abhi",
-      "mobile": 9026604297,
-      "salary": 1000
-    },
-    {
       "id": "2",
-      "name": "Aditya",
-      "mobile": 1232132132,
-      "salary": 10000
+      "name": "Abhinav Singh",
+      "mobile": 9026604297,
+      "salary": 20000
     },
     {
       "id": "3",
-      "name": "Saurabh",
+      "name": "saurabh",
       "mobile": 8298819912,
-      "salary": 12000
+      "salary": 30000
     },
     {
       "id": "4",
-      "name": "Abhishek",
+      "name": "Aditya",
+      "mobile": 8782882921,
+      "salary": 300000
+    },
+    {
+      "id": "1",
+      "name": "Abhi",
       "mobile": 827829271,
-      "salary": 10000
+      "salary": 2000
+    },
+    {
+      "id": "5",
+      "name": "aryan",
+      "mobile": 8298819912,
+      "salary": 282922
     },
     {
       "id": "6",
-      "name": "Akash",
-      "mobile": 827829271,
+      "name": "galactus",
+      "mobile": 9290202,
       "salary": 12000
     },
     {
+      "id": "7",
+      "name": "posiedon",
+      "mobile": 827829271,
+      "salary": 130000
+    },
+    {
+      "id": "8",
+      "name": "pikkaG",
+      "mobile": 827829271,
+      "salary": 14000
+    },
+    {
       "id": "9",
-      "name": "Kaushal",
-      "mobile": 827829271,
-      "salary": 120000
-    },
-    {
-      "id": "10",
-      "name": "Harsh",
-      "mobile": 827829271,
-      "salary": 120000
-    },
-    {
-      "id": "11",
-      "name": "Abhinav",
-      "mobile": 8787296520,
-      "salary": 100000
+      "name": "Godwin",
+      "mobile": 8782882921,
+      "salary": 12000
     }
   ]
 }
