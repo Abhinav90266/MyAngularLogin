@@ -1,40 +1,39 @@
 {
   "signup": [
     {
-      "id": "4b14",
-      "name": "ab",
+      "id": "3491",
+      "name": "Ab",
       "email": "ab@gmail.com",
-      "password": "123"
+      "password": "123",
+      "token": "Abab@gmail.com123"
     },
     {
-      "id": "aefb",
-      "name": "kashish",
-      "email": "k@yopmail.com",
-      "password": "123456"
+      "id": "562c",
+      "name": "",
+      "email": "",
+      "password": "",
+      "token": ""
     },
     {
-      "id": "2b8e",
-      "name": "Abhinav",
-      "email": "abhi@gmail.com",
-      "password": "123"
+      "id": "c0c5",
+      "name": "Ab",
+      "email": "ab@gmai.com",
+      "password": "123",
+      "token": "Abab@gmai.com123"
     },
     {
-      "id": "7d03",
-      "name": "abhi2",
-      "email": "abhi2@gmail.com",
-      "password": "123"
+      "id": "ec8b",
+      "name": "Abhinav Singh",
+      "email": "itsabhisingh8@gmail.com",
+      "password": "123",
+      "token": "Abhinav Singhitsabhisingh8@gmail.com123"
     },
     {
-      "id": "2d4d",
-      "name": "kashish",
-      "email": "kk@yopmail.com",
-      "password": "1111"
-    },
-    {
-      "id": "c6e7",
+      "id": "2883",
       "name": "Abhi",
-      "email": "abhi@gmail.com",
-      "password": "111"
+      "email": "ab@gmail.com",
+      "password": "Abhi@123",
+      "token": "Abhiab@gmail.comAbhi@123"
     }
   ]
 }

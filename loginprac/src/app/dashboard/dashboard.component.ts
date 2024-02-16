@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { EmployeeServicesService } from '../employee-services.service';
-import { log } from 'console';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -18,8 +18,8 @@ export class DashboardComponent implements OnInit {
   //searching
   SearchText:any;
   //sorting
-  key:string='id'
   reverse:boolean=false;
+  key:any='id'
   
   employeeForm!: FormGroup
   employees: any[] = [];
@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getList();
-    this.ondestroy();
+    // this.ondestroy();
   }
 
   getList() {
@@ -59,9 +59,9 @@ export class DashboardComponent implements OnInit {
   ondestroy() {
     localStorage.removeItem('value')
   }
-  searchInput(){
-    if (this.SearchText) {
-      this.currPage=1; 
+  searching(){
+    if(this.SearchText){
+      this.currPage=1
     }
   }
   sort(salary:any){
@@ -71,6 +71,9 @@ export class DashboardComponent implements OnInit {
       this.key=salary;
       console.log(this.key);      
     }
+  }
+  locallogout(){
+    localStorage.removeItem('logindata')
   }
 }
 

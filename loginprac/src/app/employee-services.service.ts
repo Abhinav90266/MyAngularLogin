@@ -12,7 +12,7 @@ export class EmployeeServicesService implements OnInit {
   ngOnInit(): void {    
   }
   signupApi(signupdata:any){
-    return this.http.post(this.signupurl,signupdata)
+    return this.http.post(this.signupurl,signupdata)    
   }
   loginApi(logindata:any){
     return this.http.get(this.signupurl)

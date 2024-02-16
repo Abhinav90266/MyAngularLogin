@@ -4,7 +4,7 @@
       "id": "2",
       "name": "Abhinav Singh",
       "mobile": 9026604297,
-      "salary": 20000
+      "salary": 20000      
     },
     {
       "id": "3",
@@ -31,28 +31,22 @@
       "salary": 282922
     },
     {
-      "id": "6",
-      "name": "galactus",
-      "mobile": 9290202,
-      "salary": 12000
-    },
-    {
       "id": "7",
       "name": "posiedon",
       "mobile": 827829271,
-      "salary": 130000
+      "salary": 130000      
     },
     {
       "id": "8",
       "name": "pikkaG",
       "mobile": 827829271,
-      "salary": 14000
+      "salary": 14000     
     },
     {
-      "id": "9",
-      "name": "Godwin",
-      "mobile": 8782882921,
-      "salary": 12000
+      "id": "6",
+      "name": "galactus",
+      "mobile": 9026604297,
+      "salary": 129720      
     }
   ]
 }

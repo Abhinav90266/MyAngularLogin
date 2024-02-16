@@ -3,7 +3,7 @@
     <h1 class="head">Employee Details</h1>
     <div>
       <a routerLink="/add"><button type="submit">Add</button></a>
-    <a><button type="submit" data-bs-toggle="modal" data-bs-target="#exampleModallogout">LogOut</button></a>
+    <a><button type="submit" data-bs-toggle="modal" data-bs-target="#exampleModallogout" (click)="locallogout()">LogOut</button></a>
 
 <!--Logout Modal -->
 <div class="modal fade" id="exampleModallogout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -27,7 +27,7 @@
 </div>
 
 
-<input type="search" name="search" class="search form-control  mt-5 mb-5" placeholder="Search Name Or Mobile No." [(ngModel)]="SearchText" (keyup)="searchInput()">
+<input type="search" name="search" class="search form-control  mt-5 mb-5" placeholder="Search Name Or Mobile No." [(ngModel)]="SearchText" (click)="searching">
   <div class="table table-striped table-hover">
     <table ngSkipHydration>
       <thead>
@@ -38,13 +38,13 @@
         <th (click)="sort('salary')">Salary<i class="fa fa-sort" style="font-size:20px; margin-left: 5px;"></i></th>
         </tr>
       </thead>
-      <tr *ngFor="let emp of employees|filter:SearchText|sorting:key:reverse|paginate: { itemsPerPage: 6, currentPage: currPage };let i=index">
+      <tr *ngFor="let emp of employees|filter:SearchText|sorting:key:reverse|paginate: { itemsPerPage: 5, currentPage: currPage };let i=index">
         <th>{{emp.id}}</th>
-        <td>{{emp.name}}</td>
+        <td>{{emp.name|titlecase}}</td>
         <td>{{emp.mobile}}</td>
         <td>{{emp.salary}}</td>
         <td><a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(emp,i)" >View</button></a>
-          <button class="Delete-btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onModalDelete(emp.id)">Delete</button></td>
+        <button class="Delete-btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onModalDelete(emp.id)">Delete</button></td>
       </tr>
     </table>  
 

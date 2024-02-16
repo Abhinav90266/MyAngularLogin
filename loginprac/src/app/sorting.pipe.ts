@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { retry } from 'rxjs';
 
 @Pipe({
   name: 'sorting'
@@ -20,4 +21,15 @@ export class SortingPipe implements PipeTransform {
    })
    return sortedArray;
  }
+// transform(array:any,key:any,order:'asc'|'desc'='asc') {
+//   if(!array)
+//   return [];
+//   return array.sort((a:any,b:any)=>{
+//     if(order==='asc'){
+//       return a[key]<b[key]?-1:1;
+//     }else{
+//       return b[key]<a[key]?-1:1
+//     }
+//   })
+// }
 }
