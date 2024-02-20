@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
   
   employeeForm!: FormGroup
   employees: any[] = [];
-  update: any;
+  // update: any;
   i: any
   employee: any;
   employeeId: any;
@@ -42,11 +42,11 @@ export class DashboardComponent implements OnInit {
     }, err => {
       alert("something went wrong")
     })
+    localStorage.removeItem('value')
   }
   updateform(employee: any, i: any) {
     localStorage.setItem('value', JSON.stringify(employee, i))
   }
-
   onDelete() {
     this._employeeService.onDelete(this.employeeId).subscribe((res) => {
       this.getList()

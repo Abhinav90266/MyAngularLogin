@@ -1,0 +1,15 @@
+<div class="back">
+    <a routerLink="/dashboard"><button class="btn-back">Go Back</button></a>
+</div>
+<div class="main"> 
+    <div class="heading">
+        <h1>Salary Detail</h1>
+    </div>
+    <div>
+        <label for="salary">Choose EmployeeName:</label>
+        <select (change)="empSalary($event)">
+            <option *ngFor="let sal of employees" [value]="sal.id">{{sal.name}}</option>
+        </select>
+    </div>
+    
+</div>

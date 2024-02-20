@@ -26,5 +26,18 @@ export class EmployeeServicesService implements OnInit {
   onDelete(id:any){
     return this.http.delete(`${this.employeeUrl}/${id}`)
   }
+  getEmployeeId(empSalary:any){
+    return this.http.get(this.employeeUrl,empSalary)
+  }
+  //update component services
+  getEmpid(id:any){
+    return this.http.get(`${this.employeeUrl}/${id}`)
+  }
+  updatedata(id:any,data:any){
+    return this.http.put(`${this.employeeUrl}/${id}`,data)
+  }
+  updatedataform(id:any){
+    return this.http.post(`${this.employeeUrl}/${id}`,id)
+  }
 }
 

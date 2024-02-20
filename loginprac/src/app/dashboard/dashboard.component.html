@@ -42,8 +42,8 @@
         <th>{{emp.id}}</th>
         <td>{{emp.name|titlecase}}</td>
         <td>{{emp.mobile}}</td>
-        <td>{{emp.salary}}</td>
-        <td><a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(emp,i)" >View</button></a>
+        <td><a routerLink="/salaryDetails" >{{emp.salary}}</a></td>
+        <td><a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(emp,i)" >Update</button></a>  
         <button class="Delete-btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onModalDelete(emp.id)">Delete</button></td>
       </tr>
     </table>  
