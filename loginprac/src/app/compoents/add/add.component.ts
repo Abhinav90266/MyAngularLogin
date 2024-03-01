@@ -2,7 +2,7 @@ import { Component, OnInit, input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { EmployeeServicesService } from '../employee-services.service';
+import { EmployeeServicesService } from '../../services/employee-services.service';
 
 @Component({
   selector: 'app-add',
@@ -22,7 +22,7 @@ export class AddComponent implements OnInit {
       salary: '',
     })
     this.getList();
-    this.updateData();
+    // this.updateData();
   }
   getList() {
     this.tempdata = localStorage.getItem(('value')) ? JSON.parse(localStorage.getItem(('value')) ?? '') : '';
@@ -37,7 +37,7 @@ export class AddComponent implements OnInit {
 
   }
 
-  addForm() {
+  empSubmit() {
     let payload = {
       id: (this.employeeForm.value?.id)?.toString(),
       name: this.employeeForm.value?.name,
@@ -45,31 +45,27 @@ export class AddComponent implements OnInit {
       salary: this.employeeForm.value?.salary,
     }
     console.log(payload);
-    this._employeeService.addForm(payload).subscribe(res => {
-      alert("registration succesfull");
+    this._employeeService.createdata(payload).subscribe((res) => {
+      // console.log(res,'data added successfull');      
+      alert("registration succesfull");      
       this.employeeForm.reset();
-      this.getList();
+      // this.getList()
     }, err => {
       alert("something went wrong")
     })
   }
-  updateData() {
-    console.log(this.tempdata.id);
-    this._employeeService.getEmpid(this.tempdata.id).subscribe((res) => {
+  empUpdate() {
+
+    this._employeeService.updateData(this.employeeForm.value,this.employeeForm.value?.id).subscribe((res)=>{
       console.log(res);
-      this.employeeForm = this.formBuilder.group({
-        id: this.employeeForm.value.id,
-        name: this.employeeForm.value.name,
-        mobile: this.employeeForm.value.mobile,
-        salary: this.employeeForm.value.salary,
-      })
-    })
-    this._employeeService.updatedata(this.tempdata.id, this.employeeForm.value).subscribe((res) => {
-      console.log(res);
+      this.employeeForm.reset();
     })
   }
   checkFormStatus() {
-    this.tempdata ? this.updateData() : this.addForm();
+    this.tempdata ? this.empUpdate() : this.empSubmit();
+  }
+  locallogout(){
+    localStorage.removeItem('value')
   }
 }
 

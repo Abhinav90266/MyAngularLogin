@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { EmployeeServicesService } from '../employee-services.service';
+import { EmployeeServicesService } from '../../services/employee-services.service';
 
 
 @Component({
@@ -23,39 +23,37 @@ export class DashboardComponent implements OnInit {
   
   employeeForm!: FormGroup
   employees: any[] = [];
-  // update: any;
-  i: any
-  employee: any;
   employeeId: any;
 
-  constructor(private formBuilder: FormBuilder, private _http: HttpClient, private router: Router, private _employeeService: EmployeeServicesService) {
+  constructor(  private _employeeService: EmployeeServicesService) {
   }
 
   ngOnInit(): void {
-    this.getList();
-    // this.ondestroy();
+    // this.getList();
+    this.getAllData();
+    this._employeeService.getAllemployee().subscribe((res:any)=>{
+      console.log('Get all data',res);      
+      this.employees=res.data;
+    })
   }
 
-  getList() {
-    this._employeeService.getEmployeeList().subscribe((res: any) => {
-      this.employees = res;
-    }, err => {
-      alert("something went wrong")
-    })
-    localStorage.removeItem('value')
-  }
   updateform(employee: any, i: any) {
+    
     localStorage.setItem('value', JSON.stringify(employee, i))
   }
-  onDelete() {
-    this._employeeService.onDelete(this.employeeId).subscribe((res) => {
-      this.getList()
+  deleteId(id:any) {
+    this._employeeService.deletedata(id).subscribe((res:any) => {
+      console.log(res,'data deleted');
+      this.getAllData();
     })
   }
-  //modal update
-  onModalDelete(idData: any) {
-    this.employeeId = idData;
+  getAllData(){
+    this._employeeService.getAllemployee().subscribe((res:any)=>{
+      console.log('Get all data',res);      
+      this.employees=res.data;
+    })
   }
+
   ondestroy() {
     localStorage.removeItem('value')
   }
@@ -73,7 +71,7 @@ export class DashboardComponent implements OnInit {
     }
   }
   locallogout(){
-    localStorage.removeItem('logindata')
+    localStorage.removeItem('token')
   }
 }
 

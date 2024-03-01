@@ -1,18 +1,11 @@
 {
   "signup": [
     {
-      "id": "6227",
+      "id": "26b5",
       "name": "Abhi",
       "email": "ab@gmail.com",
-      "password": "Abhi@123",
-      "token": "Abhiab@gmail.comAbhi@123"
-    },
-    {
-      "id": "369f",
-      "name": "Abhi",
-      "email": "abhi@gmail.com",
-      "password": "Abhi@123",
-      "token": "Abhiabhi@gmail.comAbhi@123"
+      "password": "Abhi@12345",
+      "token": "Abhiab@gmail.comAbhi@12345"
     }
   ]
 }

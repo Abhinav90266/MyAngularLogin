@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeServicesService } from '../employee-services.service';
+import { EmployeeServicesService } from '../../services/employee-services.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -10,19 +10,19 @@ import { HttpClient } from '@angular/common/http';
 export class SalaryDetailsComponent implements OnInit {
   employees: any
   sal: any;
-  // salary: any;
+  salary: any;
   constructor(private _empService: EmployeeServicesService, private _http: HttpClient) { }
   ngOnInit(): void {
-    this.getList()
+    // this.getList()
   }
-  getList() {
-    this._empService.getEmployeeList().subscribe((res: any) => {
-      this.employees = res;
-    }, err => {
-      alert("something went wrong")
-    })
-    localStorage.removeItem('value')
-  }
+  // getList() {
+  //   this._empService.getEmployeeList().subscribe((res: any) => {
+  //     this.employees = res;
+  //   }, err => {
+  //     alert("something went wrong")
+  //   })
+  //   localStorage.removeItem('value')
+  // }
   empSalary(empSal: any) {
     console.log("this.employees", empSal)
     const data = this.employees.filter((res: any) => {

@@ -1,52 +1,5 @@
 {
   "EmpDetails": [
-    {
-      "id": "3",
-      "name": "saurabh3",
-      "mobile": 8298819912,
-      "salary": 300
-    },
-    {
-      "id": "4",
-      "name": "Aditya",
-      "mobile": 8782882921,
-      "salary": 300
-    },
-    {
-      "id": "5",
-      "name": "aryan",
-      "mobile": 8298819912,
-      "salary": 282922
-    },
-    {
-      "id": "7",
-      "name": "posiedon",
-      "mobile": 827829271,
-      "salary": 130000
-    },
-    {
-      "id": "8",
-      "name": "pikkaG",
-      "mobile": 827829271,
-      "salary": 14000
-    },
-    {
-      "id": "6",
-      "name": "galactus",
-      "mobile": 9026604297,
-      "salary": 129720
-    },
-    {
-      "id": "1",
-      "name": "Abhinav",
-      "mobile": 8782639222,
-      "salary": 120
-    },
-    {
-      "id": "2",
-      "name": "Abhi3",
-      "mobile": 8782639223,
-      "salary": 1400
-    }
+    
   ]
 }

@@ -1,0 +1,51 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="">
+          <form class="box" [formGroup]="signupForm" >
+            <div class="text-center">
+              <h1>Registration Page</h1>
+            </div>
+            <div class="mb-3">
+              <!-- <label for="name" class="form-label">Name</label> -->
+              <input formControlName="name" type="text" id="name" class="form-control" placeholder="Your Name">
+              <div *ngIf="signupForm.get('name')?.hasError('required') && signupForm.get('name')?.touched"
+                class="text-danger">
+                *name is required.
+              </div>
+              <div *ngIf="signupForm.get('name')?.hasError('minLength') && signupForm.get('name')?.touched"
+                class="text-danger">
+                *minimum 4 words
+              </div>
+            </div>
+            <div class="mb-3">
+              <!-- <label for="email" class="form-label">Email address</label> -->
+              <input formControlName="email" type="email" id="email" class="form-control" placeholder="Email">
+              <div *ngIf="signupForm.get('email')?.hasError('required') && signupForm.get('email')?.touched"
+                class="text-danger">*email is required.
+              </div>
+              <div *ngIf="signupForm.get('email')?.hasError('pattern') && signupForm.get('email')?.touched"
+                class="text-danger">*Invalid email format.
+              </div>
+            </div>
+            <div class="mb-3">
+              <!-- <label for="password" class="form-label">Password</label> -->
+              <input formControlName="password" type="password" id="password" class="form-control" placeholder="Password">
+              <div *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.touched"
+                class="text-danger">
+                *password is required
+              </div>
+              <div class="text-red-400 text-sm"
+                *ngIf="signupForm.get('password')?.hasError('pattern') && signupForm.get('password')?.touched"
+                class="text-danger">
+                password not match requirements
+              </div>
+            </div>
+            <button type="submit" class="m-3 btn btn-primary" [disabled]="signupForm.invalid" (click)="signUp()">SignUp</button>
+            <a routerLink="/login"><button type="submit" class="m-3 btn btn-primary">Login</button></a><br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

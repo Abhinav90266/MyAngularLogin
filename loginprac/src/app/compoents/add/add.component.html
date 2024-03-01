@@ -3,7 +3,7 @@
 </div>
 
 <div>
-  <form [formGroup]="employeeForm" (ngSubmit)="updateData()" > <!-- (ngSubmit)="Addform()" -->
+  <form [formGroup]="employeeForm" > 
     <div class="list">
         <div class="mb-10">
             <label  class="form-label">Id</label>
@@ -23,10 +23,11 @@
           </div>
     </div>
     <div class="footer">
-        <a routerLink="/dashboard"><button type="submit" class="btn btn-secondary" >Close</button></a>
-        <!-- <button type="button" class="btn btn-primary" (click)="addForm()" *ngIf="tempdata">Save changes</button> -->
+        <a routerLink="/dashboard"><button type="submit" class="btn btn-secondary"(click)="locallogout()" >Close</button></a>
+        <button type="button" class="btn btn-primary"  *ngIf="!tempdata" (click)="empSubmit()" >Save changes</button>
+        <button type="button" class="btn btn-primary" *ngIf="tempdata" (click)="empUpdate()">update changes</button>
         
-        <a routerLink="/dashboard"><button type="button" class="btn btn-primary"  (click)="checkFormStatus()">{{tempdata ? 'Update': 'Save' }} changes</button></a>
+        <!-- <a ><button type="button" class="btn btn-primary"  (click)="checkFormStatus()">{{tempdata ? 'Update': 'Save' }} changes</button></a> -->
       </div>
 </form>
 </div>

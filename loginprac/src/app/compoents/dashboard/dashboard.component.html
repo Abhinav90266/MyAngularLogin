@@ -38,35 +38,15 @@
         <th (click)="sort('salary')">Salary<i class="fa fa-sort" style="font-size:20px; margin-left: 5px;"></i></th>
         </tr>
       </thead>
-      <tr *ngFor="let emp of employees|filter:SearchText|sorting:key:reverse|paginate: { itemsPerPage: 5, currentPage: currPage };let i=index">
-        <th>{{emp.id}}</th>
+      <tr *ngFor="let emp of employees|sorting:key:reverse|filter:SearchText|paginate: { itemsPerPage: 5, currentPage: currPage };let i=index">
+        <td>{{emp.id}}</td>
         <td>{{emp.name|titlecase}}</td>
         <td>{{emp.mobile}}</td>
         <td><a routerLink="/salaryDetails" >{{emp.salary}}</a></td>
         <td><a routerLink="/add"><button class="edit-btn" type="submit" (click)="updateform(emp,i)" >Update</button></a>  
-        <button class="Delete-btn" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onModalDelete(emp.id)">Delete</button></td>
+        <button class="Delete-btn" (click)="deleteId(emp.id)">Delete</button></td>
       </tr>
     </table>  
-
-
-<!--Delete Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Employee Detail</h1>
-        
-      </div>
-      <div class="modal-body">
-        Are you sure want to Delete data?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onDelete()" >Delete List</button>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
 <pagination-controls class="paginate" (pageChange)="currPage = $event"></pagination-controls>
   
